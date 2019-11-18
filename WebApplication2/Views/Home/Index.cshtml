@@ -1,7 +1,8 @@
-﻿@model IEnumerable<WebApplication2.Models.Sotrudnik>
+﻿@model List<tSotrudnik>
 
 @{
     ViewBag.Title = "Index";
+    var asd = Model;
 }
 
 <h2>Index</h2>
@@ -12,23 +13,18 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.ID_Rabotnika)
+            Id
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Imya)
-        </th>
+1        </th>
         <th>
-            @Html.DisplayNameFor(model => model.Familiya)
-        </th>
+2        </th>
         <th>
-            @Html.DisplayNameFor(model => model.Vysluga)
-        </th>
+3        </th>
         <th>
-            @Html.DisplayNameFor(model => model.Vozrast)
-        </th>
+4        </th>
         <th>
-            @Html.DisplayNameFor(model => model.DolzhnostID)
-        </th>
+4        </th>
         <th></th>
     </tr>
 
@@ -50,7 +46,7 @@
             @Html.DisplayFor(modelItem => item.Vozrast)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DolzhnostID)
+            @Html.DisplayFor(modelItem => item.tDolzhnost.Naimenovanie)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |

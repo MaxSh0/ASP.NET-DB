@@ -9,11 +9,33 @@ namespace WebApplication2.Controllers
 {
     public class HomeController : Controller
     {
-        DolznostContext db = new DolznostContext();
         public ActionResult Index()
         {
-            var sotrudniks = db.Sotrudnik.Include(p => p.Dolzhnost);
-            return View(sotrudniks.ToList());
+
+            using (var db = new db_hotelEntities())
+            {
+                var sotrudniki = db.tSotrudnik.Include("tDolzhnost").ToList();
+
+                return View(sotrudniki);
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(tSotrudnik model)
+        {
+            using (var db = new db_hotelEntities())
+            {
+                db.tSotrudnik.Add(model);
+                db.SaveChanges();
+            }
+
+                return RedirectToAction("Index");
         }
 
         public ActionResult About()

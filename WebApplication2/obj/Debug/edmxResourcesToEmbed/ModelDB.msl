@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище db_hotelModelContainer" CdmEntityContainer="db_hotelEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="db_hotelModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tDolzhnost">
+      <EntityTypeMapping TypeName="db_hotelModel.tDolzhnost">
+        <MappingFragment StoreEntitySet="tDolzhnost">
+          <ScalarProperty Name="DolzhnostID" ColumnName="DolzhnostID" />
+          <ScalarProperty Name="Naimenovanie" ColumnName="Naimenovanie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tInventar_nomerov">
+      <EntityTypeMapping TypeName="db_hotelModel.tInventar_nomerov">
+        <MappingFragment StoreEntitySet="tInventar_nomerov">
+          <ScalarProperty Name="ID_Nomer" ColumnName="ID_Nomer" />
+          <ScalarProperty Name="Naimenovanie" ColumnName="Naimenovanie" />
+          <ScalarProperty Name="ID_inventarnoy_edinitsy" ColumnName="ID_inventarnoy_edinitsy" />
+          <ScalarProperty Name="Kolvo_v_nomere" ColumnName="Kolvo_v_nomere" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tKlient">
+      <EntityTypeMapping TypeName="db_hotelModel.tKlient">
+        <MappingFragment StoreEntitySet="tKlient">
+          <ScalarProperty Name="Imya" ColumnName="Imya" />
+          <ScalarProperty Name="Familiya" ColumnName="Familiya" />
+          <ScalarProperty Name="ID_Klient" ColumnName="ID_Klient" />
+          <ScalarProperty Name="Data_zaseleniya" ColumnName="Data_zaseleniya" />
+          <ScalarProperty Name="Data_viseleniya" ColumnName="Data_viseleniya" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tNomer">
+      <EntityTypeMapping TypeName="db_hotelModel.tNomer">
+        <MappingFragment StoreEntitySet="tNomer">
+          <ScalarProperty Name="ID_Nomer" ColumnName="ID_Nomer" />
+          <ScalarProperty Name="Zanyat" ColumnName="Zanyat" />
+          <ScalarProperty Name="Tip_nomera" ColumnName="Tip_nomera" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tResursy">
+      <EntityTypeMapping TypeName="db_hotelModel.tResursy">
+        <MappingFragment StoreEntitySet="tResursy">
+          <ScalarProperty Name="ID_Resursa" ColumnName="ID_Resursa" />
+          <ScalarProperty Name="Kolvo_na_sklade" ColumnName="Kolvo_na_sklade" />
+          <ScalarProperty Name="Naimenovanie" ColumnName="Naimenovanie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tSotrudnik">
+      <EntityTypeMapping TypeName="db_hotelModel.tSotrudnik">
+        <MappingFragment StoreEntitySet="tSotrudnik">
+          <ScalarProperty Name="Imya" ColumnName="Imya" />
+          <ScalarProperty Name="Familiya" ColumnName="Familiya" />
+          <ScalarProperty Name="Vysluga" ColumnName="Vysluga" />
+          <ScalarProperty Name="ID_Dolzhnost" ColumnName="ID_Dolzhnost" />
+          <ScalarProperty Name="ID_Rabotnika" ColumnName="ID_Rabotnika" />
+          <ScalarProperty Name="Vozrast" ColumnName="Vozrast" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tBron_nomera">
+      <EntityTypeMapping TypeName="db_hotelModel.tBron_nomera">
+        <MappingFragment StoreEntitySet="tBron_nomera">
+          <ScalarProperty Name="ID_Nomer" ColumnName="ID_Nomer" />
+          <ScalarProperty Name="ID_Rabotnika" ColumnName="ID_Rabotnika" />
+          <ScalarProperty Name="ID_Klient" ColumnName="ID_Klient" />
+          <ScalarProperty Name="Data_zaseleniya" ColumnName="Data_zaseleniya" />
+          <ScalarProperty Name="Data_viseleniya" ColumnName="Data_viseleniya" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tRaskhod_resursov">
+      <EntityTypeMapping TypeName="db_hotelModel.tRaskhod_resursov">
+        <MappingFragment StoreEntitySet="tRaskhod_resursov">
+          <ScalarProperty Name="ID_Resursa" ColumnName="ID_Resursa" />
+          <ScalarProperty Name="Kolvo_ispolzovannykh" ColumnName="Kolvo_ispolzovannykh" />
+          <ScalarProperty Name="ID_Rabotnika" ColumnName="ID_Rabotnika" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

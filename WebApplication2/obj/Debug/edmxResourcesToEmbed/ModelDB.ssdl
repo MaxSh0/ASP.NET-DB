@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище db_hotelModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "db_hotel.dbo.tBron_nomera" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="tBron_nomera">
+    <Key>
+      <PropertyRef Name="ID_Nomer" />
+      <PropertyRef Name="ID_Klient" />
+      <PropertyRef Name="Data_zaseleniya" />
+      <PropertyRef Name="Data_viseleniya" />
+    </Key>
+    <Property Name="ID_Nomer" Type="int" Nullable="false" />
+    <Property Name="ID_Rabotnika" Type="int" />
+    <Property Name="ID_Klient" Type="int" Nullable="false" />
+    <Property Name="Data_zaseleniya" Type="date" Nullable="false" />
+    <Property Name="Data_viseleniya" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tDolzhnost">
+    <Key>
+      <PropertyRef Name="DolzhnostID" />
+    </Key>
+    <Property Name="DolzhnostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naimenovanie" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tInventar_nomerov">
+    <Key>
+      <PropertyRef Name="ID_inventarnoy_edinitsy" />
+    </Key>
+    <Property Name="ID_Nomer" Type="int" Nullable="false" />
+    <Property Name="Naimenovanie" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ID_inventarnoy_edinitsy" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kolvo_v_nomere" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tKlient">
+    <Key>
+      <PropertyRef Name="ID_Klient" />
+    </Key>
+    <Property Name="Imya" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Familiya" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ID_Klient" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Data_zaseleniya" Type="date" Nullable="false" />
+    <Property Name="Data_viseleniya" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tNomer">
+    <Key>
+      <PropertyRef Name="ID_Nomer" />
+    </Key>
+    <Property Name="ID_Nomer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Zanyat" Type="bit" Nullable="false" />
+    <Property Name="Tip_nomera" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "db_hotel.dbo.tRaskhod_resursov" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="tRaskhod_resursov">
+    <Key>
+      <PropertyRef Name="ID_Resursa" />
+      <PropertyRef Name="Kolvo_ispolzovannykh" />
+    </Key>
+    <Property Name="ID_Resursa" Type="int" Nullable="false" />
+    <Property Name="Kolvo_ispolzovannykh" Type="int" Nullable="false" />
+    <Property Name="ID_Rabotnika" Type="int" />
+  </EntityType>
+  <EntityType Name="tResursy">
+    <Key>
+      <PropertyRef Name="ID_Resursa" />
+    </Key>
+    <Property Name="ID_Resursa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kolvo_na_sklade" Type="int" Nullable="false" />
+    <Property Name="Naimenovanie" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tSotrudnik">
+    <Key>
+      <PropertyRef Name="ID_Rabotnika" />
+    </Key>
+    <Property Name="Imya" Type="nvarchar" MaxLength="30" />
+    <Property Name="Familiya" Type="nvarchar" MaxLength="30" />
+    <Property Name="Vysluga" Type="int" Nullable="false" />
+    <Property Name="ID_Dolzhnost" Type="int" />
+    <Property Name="ID_Rabotnika" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Vozrast" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__tBron_nom__ID_Kl__1975C517">
+    <End Role="tKlient" Type="Self.tKlient" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tBron_nomera" Type="Self.tBron_nomera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tKlient">
+        <PropertyRef Name="ID_Klient" />
+      </Principal>
+      <Dependent Role="tBron_nomera">
+        <PropertyRef Name="ID_Klient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tBron_nom__ID_No__1A69E950">
+    <End Role="tNomer" Type="Self.tNomer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tBron_nomera" Type="Self.tBron_nomera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tNomer">
+        <PropertyRef Name="ID_Nomer" />
+      </Principal>
+      <Dependent Role="tBron_nomera">
+        <PropertyRef Name="ID_Nomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tBron_nom__ID_Ra__1881A0DE">
+    <End Role="tSotrudnik" Type="Self.tSotrudnik" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tBron_nomera" Type="Self.tBron_nomera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tSotrudnik">
+        <PropertyRef Name="ID_Rabotnika" />
+      </Principal>
+      <Dependent Role="tBron_nomera">
+        <PropertyRef Name="ID_Rabotnika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tInventar__ID_No__1B5E0D89">
+    <End Role="tNomer" Type="Self.tNomer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tInventar_nomerov" Type="Self.tInventar_nomerov" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tNomer">
+        <PropertyRef Name="ID_Nomer" />
+      </Principal>
+      <Dependent Role="tInventar_nomerov">
+        <PropertyRef Name="ID_Nomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tRaskhod___ID_Ra__1699586C">
+    <End Role="tSotrudnik" Type="Self.tSotrudnik" Multiplicity="0..1" />
+    <End Role="tRaskhod_resursov" Type="Self.tRaskhod_resursov" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tSotrudnik">
+        <PropertyRef Name="ID_Rabotnika" />
+      </Principal>
+      <Dependent Role="tRaskhod_resursov">
+        <PropertyRef Name="ID_Rabotnika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tRaskhod___ID_Re__178D7CA5">
+    <End Role="tResursy" Type="Self.tResursy" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tRaskhod_resursov" Type="Self.tRaskhod_resursov" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tResursy">
+        <PropertyRef Name="ID_Resursa" />
+      </Principal>
+      <Dependent Role="tRaskhod_resursov">
+        <PropertyRef Name="ID_Resursa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tSotrudni__ID_Do__15A53433">
+    <End Role="tDolzhnost" Type="Self.tDolzhnost" Multiplicity="0..1" />
+    <End Role="tSotrudnik" Type="Self.tSotrudnik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tDolzhnost">
+        <PropertyRef Name="DolzhnostID" />
+      </Principal>
+      <Dependent Role="tSotrudnik">
+        <PropertyRef Name="ID_Dolzhnost" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище db_hotelModelContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tDolzhnost" EntityType="Self.tDolzhnost" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tInventar_nomerov" EntityType="Self.tInventar_nomerov" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tKlient" EntityType="Self.tKlient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tNomer" EntityType="Self.tNomer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tResursy" EntityType="Self.tResursy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tSotrudnik" EntityType="Self.tSotrudnik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tBron_nomera" EntityType="Self.tBron_nomera" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tBron_nomera].[ID_Nomer] AS [ID_Nomer], 
+    [tBron_nomera].[ID_Rabotnika] AS [ID_Rabotnika], 
+    [tBron_nomera].[ID_Klient] AS [ID_Klient], 
+    [tBron_nomera].[Data_zaseleniya] AS [Data_zaseleniya], 
+    [tBron_nomera].[Data_viseleniya] AS [Data_viseleniya]
+    FROM [dbo].[tBron_nomera] AS [tBron_nomera]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tRaskhod_resursov" EntityType="Self.tRaskhod_resursov" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tRaskhod_resursov].[ID_Resursa] AS [ID_Resursa], 
+    [tRaskhod_resursov].[Kolvo_ispolzovannykh] AS [Kolvo_ispolzovannykh], 
+    [tRaskhod_resursov].[ID_Rabotnika] AS [ID_Rabotnika]
+    FROM [dbo].[tRaskhod_resursov] AS [tRaskhod_resursov]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__tBron_nom__ID_Kl__1975C517" Association="Self.FK__tBron_nom__ID_Kl__1975C517">
+      <End Role="tKlient" EntitySet="tKlient" />
+      <End Role="tBron_nomera" EntitySet="tBron_nomera" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tBron_nom__ID_No__1A69E950" Association="Self.FK__tBron_nom__ID_No__1A69E950">
+      <End Role="tNomer" EntitySet="tNomer" />
+      <End Role="tBron_nomera" EntitySet="tBron_nomera" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tBron_nom__ID_Ra__1881A0DE" Association="Self.FK__tBron_nom__ID_Ra__1881A0DE">
+      <End Role="tSotrudnik" EntitySet="tSotrudnik" />
+      <End Role="tBron_nomera" EntitySet="tBron_nomera" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tInventar__ID_No__1B5E0D89" Association="Self.FK__tInventar__ID_No__1B5E0D89">
+      <End Role="tNomer" EntitySet="tNomer" />
+      <End Role="tInventar_nomerov" EntitySet="tInventar_nomerov" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tRaskhod___ID_Ra__1699586C" Association="Self.FK__tRaskhod___ID_Ra__1699586C">
+      <End Role="tSotrudnik" EntitySet="tSotrudnik" />
+      <End Role="tRaskhod_resursov" EntitySet="tRaskhod_resursov" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tRaskhod___ID_Re__178D7CA5" Association="Self.FK__tRaskhod___ID_Re__178D7CA5">
+      <End Role="tResursy" EntitySet="tResursy" />
+      <End Role="tRaskhod_resursov" EntitySet="tRaskhod_resursov" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tSotrudni__ID_Do__15A53433" Association="Self.FK__tSotrudni__ID_Do__15A53433">
+      <End Role="tDolzhnost" EntitySet="tDolzhnost" />
+      <End Role="tSotrudnik" EntitySet="tSotrudnik" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
