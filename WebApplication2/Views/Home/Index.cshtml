@@ -4,8 +4,33 @@
     ViewBag.Title = "Index";
     var asd = Model;
 }
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/StyleSheet1.css">
+</head>
 
-<h2>Index</h2>
+<div class="Button_Edit">
+    <div>
+        <a class="btn btn-primary" href="@Url.Action("Index", "tSotrudniks")">Редактировать таблицу сотрудников</a>
+    </div>
+    <div>
+        <a class="btn btn-primary" href="@Url.Action("Index", "tDolzhnosts")">Редактировать таблицу должностей</a>
+    </div>
+    <div>
+        <a class="btn btn-primary" href="@Url.Action("Index", "tInventar_nomerov")">Редактировать таблицу должностей</a>
+    </div>
+    <div>
+        <a class="btn btn-primary" href="@Url.Action("Index", "tDolzhnosts")">Редактировать таблицу должностей</a>
+    </div>
+    <div>
+        <a class="btn btn-primary" href="@Url.Action("Index", "tDolzhnosts")">Редактировать таблицу должностей</a>
+    </div>
+    <div>
+        <a class="btn btn-primary" href="@Url.Action("Index", "tDolzhnosts")">Редактировать таблицу должностей</a>
+    </div>
+</div>
+
+
+@*<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -56,4 +81,4 @@
     </tr>
 }
 
-</table>
+</table>*@

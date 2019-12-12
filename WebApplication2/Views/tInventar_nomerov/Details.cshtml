@@ -1,0 +1,42 @@
+﻿@model WebApplication2.tInventar_nomerov
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tInventar_nomerov</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Naimenovanie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Naimenovanie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kolvo_v_nomere)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kolvo_v_nomere)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tNomer.Tip_nomera)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tNomer.Tip_nomera)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_inventarnoy_edinitsy }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

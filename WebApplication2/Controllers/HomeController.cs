@@ -12,12 +12,13 @@ namespace WebApplication2.Controllers
         public ActionResult Index()
         {
 
-            using (var db = new db_hotelEntities())
-            {
-                var sotrudniki = db.tSotrudnik.Include("tDolzhnost").ToList();
+            //using (var db = new db_hotelEntities())
+            //{
+            //    var sotrudniki = db.tSotrudnik.Include("tDolzhnost").ToList();
 
-                return View(sotrudniki);
-            }
+            //    return View(sotrudniki);
+            //}
+            return View();
         }
 
         [HttpGet]
@@ -36,6 +37,34 @@ namespace WebApplication2.Controllers
             }
 
                 return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int? ID_Rabotnika)
+        {
+            if (ID_Rabotnika == 0)
+            {
+                ViewBag.Message = "ERROR";
+            }
+
+            using (var db = new db_hotelEntities())
+            {
+                var sotrudnik = db.tSotrudnik.Find(ID_Rabotnika);
+                return View(sotrudnik);
+            }
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            using (var db = new db_hotelEntities())
+            {
+                tSotrudnik model = db.tSotrudnik.Find(id);
+                db.tSotrudnik.Remove(model);
+                db.SaveChanges();
+            }
+
+            return RedirectToAction("Index");
         }
 
         public ActionResult About()

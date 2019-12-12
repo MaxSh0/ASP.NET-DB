@@ -1,0 +1,42 @@
+﻿@model WebApplication2.tBron_nomera
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tBron_nomera</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tKlient.Imya)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tKlient.Imya)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tNomer.Tip_nomera)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tNomer.Tip_nomera)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tSotrudnik.Imya)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tSotrudnik.Imya)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

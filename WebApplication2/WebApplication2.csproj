@@ -152,6 +152,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\tBron_nomeraController.cs" />
+    <Compile Include="Controllers\tDolzhnostsController.cs" />
+    <Compile Include="Controllers\tInventar_nomerovController.cs" />
+    <Compile Include="Controllers\tKlientsController.cs" />
+    <Compile Include="Controllers\tNomersController.cs" />
+    <Compile Include="Controllers\tRaskhod_resursovController.cs" />
+    <Compile Include="Controllers\tResursiesController.cs" />
+    <Compile Include="Controllers\tSotrudniksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -209,6 +217,7 @@
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\StyleSheet1.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -261,6 +270,47 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Home\Delete.cshtml" />
+    <Content Include="Views\tSotrudniks\Create.cshtml" />
+    <Content Include="Views\tSotrudniks\Delete.cshtml" />
+    <Content Include="Views\tSotrudniks\Details.cshtml" />
+    <Content Include="Views\tSotrudniks\Edit.cshtml" />
+    <Content Include="Views\tSotrudniks\Index.cshtml" />
+    <Content Include="Views\tDolzhnosts\Create.cshtml" />
+    <Content Include="Views\tDolzhnosts\Delete.cshtml" />
+    <Content Include="Views\tDolzhnosts\Details.cshtml" />
+    <Content Include="Views\tDolzhnosts\Edit.cshtml" />
+    <Content Include="Views\tDolzhnosts\Index.cshtml" />
+    <Content Include="Views\tRaskhod_resursov\Create.cshtml" />
+    <Content Include="Views\tRaskhod_resursov\Delete.cshtml" />
+    <Content Include="Views\tRaskhod_resursov\Details.cshtml" />
+    <Content Include="Views\tRaskhod_resursov\Edit.cshtml" />
+    <Content Include="Views\tRaskhod_resursov\Index.cshtml" />
+    <Content Include="Views\tResursies\Create.cshtml" />
+    <Content Include="Views\tResursies\Delete.cshtml" />
+    <Content Include="Views\tResursies\Details.cshtml" />
+    <Content Include="Views\tResursies\Edit.cshtml" />
+    <Content Include="Views\tResursies\Index.cshtml" />
+    <Content Include="Views\tBron_nomera\Create.cshtml" />
+    <Content Include="Views\tBron_nomera\Delete.cshtml" />
+    <Content Include="Views\tBron_nomera\Details.cshtml" />
+    <Content Include="Views\tBron_nomera\Edit.cshtml" />
+    <Content Include="Views\tBron_nomera\Index.cshtml" />
+    <Content Include="Views\tNomers\Create.cshtml" />
+    <Content Include="Views\tNomers\Delete.cshtml" />
+    <Content Include="Views\tNomers\Details.cshtml" />
+    <Content Include="Views\tNomers\Edit.cshtml" />
+    <Content Include="Views\tNomers\Index.cshtml" />
+    <Content Include="Views\tInventar_nomerov\Create.cshtml" />
+    <Content Include="Views\tInventar_nomerov\Delete.cshtml" />
+    <Content Include="Views\tInventar_nomerov\Details.cshtml" />
+    <Content Include="Views\tInventar_nomerov\Edit.cshtml" />
+    <Content Include="Views\tInventar_nomerov\Index.cshtml" />
+    <Content Include="Views\tKlients\Create.cshtml" />
+    <Content Include="Views\tKlients\Delete.cshtml" />
+    <Content Include="Views\tKlients\Details.cshtml" />
+    <Content Include="Views\tKlients\Edit.cshtml" />
+    <Content Include="Views\tKlients\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
