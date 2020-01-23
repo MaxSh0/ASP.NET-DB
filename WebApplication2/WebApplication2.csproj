@@ -178,9 +178,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelDB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Dolzhnost.cs" />
-    <Compile Include="Models\DolznostContext.cs" />
-    <Compile Include="Models\Sotrudnik.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
@@ -291,11 +289,6 @@
     <Content Include="Views\tResursies\Details.cshtml" />
     <Content Include="Views\tResursies\Edit.cshtml" />
     <Content Include="Views\tResursies\Index.cshtml" />
-    <Content Include="Views\tBron_nomera\Create.cshtml" />
-    <Content Include="Views\tBron_nomera\Delete.cshtml" />
-    <Content Include="Views\tBron_nomera\Details.cshtml" />
-    <Content Include="Views\tBron_nomera\Edit.cshtml" />
-    <Content Include="Views\tBron_nomera\Index.cshtml" />
     <Content Include="Views\tNomers\Create.cshtml" />
     <Content Include="Views\tNomers\Delete.cshtml" />
     <Content Include="Views\tNomers\Details.cshtml" />
@@ -311,6 +304,12 @@
     <Content Include="Views\tKlients\Details.cshtml" />
     <Content Include="Views\tKlients\Edit.cshtml" />
     <Content Include="Views\tKlients\Index.cshtml" />
+    <Content Include="Views\Home\Registration.cshtml" />
+    <Content Include="Views\tBron_nomera\Create.cshtml" />
+    <Content Include="Views\tBron_nomera\Delete.cshtml" />
+    <Content Include="Views\tBron_nomera\Details.cshtml" />
+    <Content Include="Views\tBron_nomera\Edit.cshtml" />
+    <Content Include="Views\tBron_nomera\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
